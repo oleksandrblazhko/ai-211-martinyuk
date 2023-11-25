@@ -1,0 +1,18 @@
+@startuml
+
+title Activity Diagram
+
+start
+
+:User shares his consumption to program;
+:Program checks information;
+
+if (Is information valid?) then (yes)
+  :Generate eco rating;
+else (no)
+  :Convertion impossible, try later!;
+endif
+
+stop
+
+@enduml
