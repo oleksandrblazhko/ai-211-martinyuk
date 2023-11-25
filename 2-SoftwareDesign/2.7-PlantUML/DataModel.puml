@@ -1,0 +1,44 @@
+@startuml
+title Example of Relation Schema
+
+hide circle
+
+entity "User" as user{
+  (PK) user_id
+  --
+  name
+  surname 
+  email
+  password
+}
+
+entity "Consumption" as consumption{
+  (PK) consumption_id
+  --
+  (FK) eco_rating_id
+  (FK) user_id
+  quantity
+  date
+  time
+}
+
+entity "Eco_Rating" as eco_rating{
+  (PK) eco_rating_id
+  --
+  eco_percentage
+  date
+}
+
+entity "Pollution_messages" as pollution_messages{
+  (PK) pollution_messages
+  --
+  (FK) user
+  sending_time
+}
+
+user --{ consumption
+consumption --o eco_rating
+user --{ pollution_messages
+
+@enduml
+
