@@ -1,0 +1,12 @@
+@startuml
+title Concept Classes Diagram
+
+Class User
+Class Consumption
+Class Notification_about_cleanliness
+Class Eco_Rating
+
+User"1" --o "+"Consumption: manage
+Consumption"1" --o "+"Eco_Rating: has
+User"1" --o "1"Notification_about_cleanliness: manage
+@enduml
